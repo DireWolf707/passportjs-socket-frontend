@@ -6,11 +6,13 @@ import { toastOptions } from "../utils/toastOptions"
 import { useUpdateProfileMutation, useDeleteAvatarMutation, useUpdateAvatarMutation, useFetchProfileQuery } from "../store"
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"
 import DeleteIcon from "@mui/icons-material/Delete"
+import ThreeBars from "../components/loaders/ThreeBars"
 
 const Profile = () => {
   const { enqueueSnackbar: toast } = useSnackbar()
   const {
     data: { data: user },
+    isFetching,
   } = useFetchProfileQuery()
   const [updateProfile, { isLoading }] = useUpdateProfileMutation()
   const [updateAvatar, { isLoading: isAvatarUpdating }] = useUpdateAvatarMutation()
@@ -53,6 +55,8 @@ const Profile = () => {
       .then((resp) => toast(resp.data, toastOptions()))
       .catch(errorHandler)
   }
+
+  if (isFetching) return <ThreeBars />
 
   return (
     <Stack

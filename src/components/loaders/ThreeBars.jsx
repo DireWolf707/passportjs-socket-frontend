@@ -3,7 +3,7 @@ import { Stack, LinearProgress } from "@mui/material"
 
 const ThreeBars = () => {
   return (
-    <Stack justifyContent="center" alignItems="center" gap={1} sx={{ height: "100vh", width: "100vw", bgcolor: "#000" }}>
+    <Stack flexGrow={1} justifyContent="center" alignItems="center" gap={1} bgcolor="#000">
       <LinearProgress color="error" sx={{ height: "8px", width: { xs: "320px", sm: "360px" } }} />
       <LinearProgress color="error" sx={{ height: "8px", width: { xs: "320px", sm: "360px" } }} />
       <LinearProgress color="error" sx={{ height: "8px", width: { xs: "320px", sm: "360px" } }} />
