@@ -20,7 +20,7 @@ const App = () => {
     )
 
   return (
-    <Stack minHeight="100vh" width="100vw" bgcolor="brown">
+    <Stack height="100vh" width="100vw" bgcolor="brown">
       <Navbar />
       {user && <Sidebar />}
 

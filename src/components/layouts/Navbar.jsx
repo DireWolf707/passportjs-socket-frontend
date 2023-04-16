@@ -79,7 +79,7 @@ const Navbar = () => {
         )}
       </Stack>
 
-      <Box height={navHeight} />
+      <Box flexShrink={0} height={navHeight} />
     </>
   )
 }
